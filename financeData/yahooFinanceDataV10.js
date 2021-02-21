@@ -46,61 +46,77 @@ class YahooFinanceDataV10 {
     price(ticker, callback) {
         this.request(this.buildUrl(ticker, "price"), function(resp) {
             var json = JSON.parse(resp)
-            var quoteSummary = json["quoteSummary"]
-            if (quoteSummary["error"] == null)
-            {
-                var result = quoteSummary["result"][0]["price"]
-                callback(null, result)
-            }
-            else 
-            {
-                callback(quoteSummary["error"], null)
-            }
+			if(json != null){
+				var quoteSummary = json["quoteSummary"]
+				if (quoteSummary["error"] == null)
+				{
+					var result = quoteSummary["result"][0]["price"]
+					callback(null, result)
+				}
+				else 
+				{
+					callback(quoteSummary["error"], null)
+				}
+			}else{
+				callback("error", null)
+			}
         })
     }
     summaryDetail(ticker, callback) {
         this.request(this.buildUrl(ticker, "summaryDetail"), function(resp) {
             var json = JSON.parse(resp)
-            var quoteSummary = json["quoteSummary"]
-            if (quoteSummary["error"] == null)
-            {
-                var result = quoteSummary["result"][0]["summaryDetail"]
-                callback(null, result)
-            }
-            else 
-            {
-                callback(quoteSummary["error"], null)
-            }
+			if(json != null){
+				var quoteSummary = json["quoteSummary"]
+				if (quoteSummary["error"] == null)
+				{
+					var result = quoteSummary["result"][0]["summaryDetail"]
+					callback(null, result)
+				}
+				else 
+				{
+					callback(quoteSummary["error"], null)
+				}
+			}else{
+				callback("error", null)
+			}
         })
     }
     defaultKeyStatistics(ticker, callback) {
         this.request(this.buildUrl(ticker, "defaultKeyStatistics"), function(resp) {
             var json = JSON.parse(resp)
-            var quoteSummary = json["quoteSummary"]
-            if (quoteSummary["error"] == null)
-            {
-                var result = quoteSummary["result"][0]["defaultKeyStatistics"]
-                callback(null, result)
-            }
-            else 
-            {
-                callback(quoteSummary["error"], null)
-            }
+			if(json != null){
+				var quoteSummary = json["quoteSummary"]
+				if (quoteSummary["error"] == null)
+				{
+					var result = quoteSummary["result"][0]["defaultKeyStatistics"]
+					callback(null, result)
+				}
+				else 
+				{
+					callback(quoteSummary["error"], null)
+				}
+			}else{
+				callback("error", null)
+			}
         })
     }
     financialData(ticker, callback) {
         this.request(this.buildUrl(ticker, "financialData"), function(resp) {
             var json = JSON.parse(resp)
-            var quoteSummary = json["quoteSummary"]
-            if (quoteSummary["error"] == null)
-            {
-                var result = quoteSummary["result"][0]["financialData"]
-                callback(null, result)
-            }
-            else 
-            {
-                callback(quoteSummary["error"], null)
-            }
+			if(json != null){
+				var quoteSummary = json["quoteSummary"]
+				if (quoteSummary["error"] == null)
+				{
+					var result = quoteSummary["result"][0]["financialData"]
+					callback(null, result)
+				}
+				else 
+				{
+					callback(quoteSummary["error"], null)
+				}
+			}else{
+				callback("error", null)
+			}
         })
     }
 }
